@@ -205,3 +205,184 @@ fun logicalOperator(){
     bool = !((a+b) > (a*3) || (b-a) > 0)
     println(bool)
 }
+
+fun conditionalStatementIf(){
+    println("Chapter01 - Conditional Statement - if")
+    var a = 15
+    var b = 11
+
+    if (a>b){
+        println("Here is in the 'if'")
+        a -= b
+    }
+    println(a)
+}
+
+fun conditionalStatementIfelse(){
+    println("Chapter01 - Conditional Statement - if, else")
+    val a = 10
+    val b = 5
+
+    if (a<b)
+        println("if!!!")
+    else
+        println("else!!!")
+
+    if (a>b)
+        println("a > b !!!!")
+    else
+        println("a <= b !!!!!")
+}
+
+fun conditionalStatementNestedIfElse(){
+    println("Chapter01 - Conditional Statement - nested if, else")
+    val score = 88
+
+    if (score >= 90){
+        println("A")
+    } else if (score >= 80){
+        println("B")
+    } else if (score >= 70) {
+        println("C")
+    } else {
+        println("D")
+    }
+}
+
+fun conditionalStatementIfExpression(){
+    // Damn awesome!!!
+    println("Chapter01 - Conditional Statement - if expression")
+    val value: Int = if(10>5){
+        println("10 is bigger than 5.")
+        10
+    } else {
+        println("10 is lower than 5.")
+        5
+    }
+    println(value)
+
+    val another: Unit = if(10>5){
+        val anotherA: Int = 10
+    } else {
+        val anotherB: Int = 5
+    }
+
+    // Actually meaning less...
+    println(another)
+}
+
+fun conditionalStatementWhen(){
+    println("Chapter01 - Conditional Statement - When")
+    // val score = readLine()!!.toInt()
+    val score = 64
+
+    when (score / 10){
+        6 -> { println("D") }
+        7 -> { println("C") }
+        8 -> { println("B") }
+        9, 10 -> { println("A") }
+        else -> { println("F") }
+
+    }
+    println("test")
+}
+
+fun conditionalStatementWhenExpression() {
+    println("Chapter01 - Conditional Statement - When Expression")
+    val score: Int = 95
+
+    val grade: Char = when(score / 10){
+        6 -> 'D'
+        7 -> 'C'
+        8 -> 'B'
+        9, 10 -> 'A'
+        else -> 'F'
+    }
+    println("Score : $score, Grade : $grade")
+
+    val anotherGrade: Char = when{
+        score >= 90 -> 'A'
+        score >= 80 -> 'B'
+        score >= 70 -> 'C'
+        score >= 60 -> 'D'
+        else -> 'F'
+    }
+    println("Score : $score, Another-Grade : $anotherGrade")
+}
+
+fun loopWhile() {
+    println("Chapter01 - Loop - While")
+    var i: Int = 1
+
+    while (i < 10){
+        println(i)
+        i += 1
+    }
+}
+
+fun loopDoWhile(){
+    println("Chapter01 - Loop - Do While")
+    var i = 1
+    do {
+        println("Run!!! - $i")
+        i -= 1
+    } while (i == 0)
+}
+
+fun loopContinue(){
+    println("Chapter01 - Loop - Continue")
+    var i: Int = 0
+
+    while (i < 10){
+        i += 1
+        if (i % 2 == 0)
+            continue
+        println(i)
+    }
+}
+
+fun loopBreak(){
+    println("Chapter01 - Loop - Break")
+    var i = 0
+    while ( true ){
+        i += 1
+        if (i >= 5)
+            break
+        print("$i ")
+    }
+    println()
+}
+
+fun loopLabel(){
+    println("Chapter01 - Loop - Label")
+    var x = 0
+    var y = 0
+
+    while (x <= 20){
+        y = 0
+        while (y <= 20) {
+            if (x + y == 15 && x - y == 5){
+                break
+            }
+            y += 1
+        }
+        x += 1
+    }
+    println("x: $x, y: $y")
+
+    // -----
+
+    var xx = 0
+    var yy = 0
+
+    outer@ while ( xx <= 20){
+        y = 0
+        while (yy <= 20){
+            if (xx + yy == 15 && xx - yy == 5)
+                break@outer
+            yy += 1
+        }
+        xx += 1
+    }
+    println("xx: $xx, yy: $yy")
+}
